@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+:root {
+    --color-primary: #e31717;
+    --color-white: #faeded;
+    --color-green: #045c04;
+    --color-blue: rgb(19, 53, 222);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.btn {
+    display: inline-block;
+    width: fit-content;
+    padding: 12px 28px;
+    background: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: var(--color-white);
+    letter-spacing: .4px;
+    font-weight: 600;
+    transition: .4s ease;
+    opacity: 0;
+    animation: logoAni 1s ease forwards;
+    animation-delay: 1.3s;
+}
+
+.btn:hover {
+    background: none;
+    color: var(--color-primary);
+}
+
+.container {
+    max-width: 1620px;
+    width: 90%;
+    margin: 0 auto;
+    color: var(--color-white);
+}
+
+nav {
+    width: 100%;
+    height: 5rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-container ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo h3 {
+    font-size: 25px;
+    color: var(--color-white);
+    opacity: 0;
+    animation: logoAni 1s ease forwards;
+}
+
+.nav-link li a {
+    color: var(--color-blue);
+    font-size: 17px;
+    transition: .4s ease;
+    display: inline-block;
+    animation: NavliaAni forwards 1s ease;
+    animation-delay: calc(.2s * var(--i));
+    opacity: 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: .4s;
+}
+
+.nav-link li a:hover {
+    color: var(--color-primary);
+}
+
+.nav-link li .active-link {
+    color: var(--color-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.social-link li a {
+    height: 40px;
+    width: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    transform: rotate(45deg);
+    transition: .4s ease;
+    animation: socialAni forwards 1s ease;
+    animation-delay: calc(.2s * var(--i));
+    opacity: 0;
+}
+
+.social-link li a:hover {
+    border-color: var(--color-white);
+}
+
+.social-link li a i {
+    transform: rotate(-45deg);
+    font-size: 20px;
+    color: var(--color-white);
+}
+
+
+header {
+    width: 100;
+    height: 100vh;
+    background: url('plain black.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-left {
+    max-width: 620px;
+    position: relative;
+}
+
+.header-left h1 {
+    font-size: 54px;
+    line-height: 1.2;
+    color: var(--color-white);
+    animation: H1Ani forwards 1s ease;
+    opacity: 0;
+    animation-delay: 1s;
+}
+
+.header-left h3 {
+    font-size: 40px;
+    font-weight: 400;
+    color: var(--color-white);
+    margin-top: .5rem;
+    animation: H1Ani forwards 1s ease;
+    opacity: 0;
+    animation-delay: .8s;
+}
+
+.header-left p {
+    margin: 15px 0 30px;
+    line-height: 150%;
+    font-size: 16px;
+    animation: logoAni forwards 1s ease;
+    opacity: 0;
+    animation-delay: .6s;
+}
+
+.header-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.header-right {
+    position: relative;
+    left: 75%;
+    top: 15%;
+    width: 450px;
+    height: auto;
+    transform: transform 0.3s ease;
+    transform: scale(1.9);
+}
+
+
+
+#Features {
+    padding: 100px 50px;
+    width: 100;
+    height: 100vh;
+    background: url('plain black.jpg');
+    background-size: cover;
+    
+    
+}
+
+.section-info {
+    font-weight: bold;
+    text-align: center;
+}
+.section-info h1 {
+    font-size: 50px;
+    color: #faeded;
+}
+.section-info p {
+    font-size: 25px;
+    color:aqua;
+}
+
+.about-left-col h3 {
+    color: #faeded;
+    line-height: 1.8;
+    text-align: center;
+    height: 40px;
+    display: flex;
+}
+
+.section-right {
+    position: absolute;
+    left: 75%;
+    top: 150%;
+    width: 450px;
+    height: auto;
+    transform: transform 0.3s ease;
+    transform: scale(1.9);
+}
+
+#Compare {
+    width: 100;
+    height: 100vh;
+    background: url('plain black.jpg');
+    background-size: cover;
+}
+  
+
+/* .......................Animation Start...................... */
+
+@keyframes logoAni {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes NavliaAni {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes socialAni {
+    0% {
+        transform: translateX(100px) rotate(45deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) rotate(45deg);
+        opacity: 1;
+    }
+}
+
+@keyframes H1Ani {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* .......................End Animation...........*/
